@@ -67,26 +67,26 @@
     letter-spacing: -0.02em;
   }
   
-  /* ルートフォントサイズ＝全体的なスケール（rem の基準）。文字・ヘッダー・余白すべてに効く */
+  /* ルートフォントサイズ＝全体的なスケール。80%表示に合わせて 16px の 80% を基準に */
   html {
-    font-size: 12px;
+    font-size: 12.8px; /* 16 * 0.8 */
   }
   
   @media (min-width: 768px) {
     html {
-      font-size: 13px;
+      font-size: 12px; /* 15 * 0.8 */
     }
   }
   
   @media (min-width: 1024px) {
     html {
-      font-size: 14px;
+      font-size: 12.8px; /* 16 * 0.8、大画面でも 80% 維持 */
     }
   }
   
   @media (max-width: 640px) {
     html {
-      font-size: 11px;
+      font-size: 11.2px; /* 14 * 0.8 */
     }
   }
 }

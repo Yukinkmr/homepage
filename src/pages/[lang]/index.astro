@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params as { lang: Lang };
-const title = lang === 'ja' ? 'ホーム' : 'Home';
+const title = lang === 'ja' ? 'Yukinkmrのホームページ' : "Yukinkmr's Homepage";
 
 const getTitle = (item: { title_ja: string; title_en: string }) => 
   lang === 'ja' ? item.title_ja : item.title_en;

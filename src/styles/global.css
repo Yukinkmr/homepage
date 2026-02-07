@@ -67,15 +67,20 @@
     letter-spacing: -0.02em;
   }
   
-  /* 固定ベースフォントサイズ（ローカル・本番で表示を統一） */
+  /* 固定ベースフォントサイズ（ローカル・本番で表示を統一、やや小さめ） */
   html {
-    font-size: 16px;
+    font-size: 14px;
   }
   
-  /* 小さな画面のみやや縮小 */
-  @media (max-width: 640px) {
+  @media (min-width: 1024px) {
     html {
       font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    html {
+      font-size: 13px;
     }
   }
 }

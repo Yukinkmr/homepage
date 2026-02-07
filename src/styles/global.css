@@ -67,20 +67,26 @@
     letter-spacing: -0.02em;
   }
   
-  /* 固定ベースフォントサイズ（ローカル・本番で表示を統一、やや小さめ） */
+  /* ルートフォントサイズ＝全体的なスケール（rem の基準）。文字・ヘッダー・余白すべてに効く */
   html {
-    font-size: 14px;
+    font-size: 12px;
+  }
+  
+  @media (min-width: 768px) {
+    html {
+      font-size: 13px;
+    }
   }
   
   @media (min-width: 1024px) {
     html {
-      font-size: 15px;
+      font-size: 14px;
     }
   }
   
   @media (max-width: 640px) {
     html {
-      font-size: 13px;
+      font-size: 11px;
     }
   }
 }

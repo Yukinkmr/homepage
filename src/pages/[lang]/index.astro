@@ -23,6 +23,7 @@ const getTitle = (item: { title_ja: string; title_en: string }) =>
 const getSummary = (item: { summary_ja: string; summary_en: string }) => 
   lang === 'ja' ? item.summary_ja : item.summary_en;
 
+const base = import.meta.env.BASE_URL;
 const categories = ['soccer', 'research', 'development', 'other'] as const;
 const featuredItems = categories.map((category) => {
   const items = portfolioData[category] || [];
@@ -42,7 +43,7 @@ const featuredItems = categories.map((category) => {
       </h1>
       <div class="flex justify-center space-x-4 mb-16 animate-fade-in-delay">
         <a 
-          href={`/${lang}/contact/`}
+          href={`${base}${lang}/contact/`}
           target="_self"
           class="px-8 py-4 bg-cyan-500 text-white rounded-xl font-semibold hover:bg-cyan-600 transition-colors shadow-lg shadow-cyan-500/20"
         >
@@ -85,7 +86,7 @@ const featuredItems = categories.map((category) => {
                   {t(`category.${category}`, lang)}
                 </h3>
                 <a 
-                  href={`/${lang}/${category}/`}
+                  href={`${base}${lang}/${category}/`}
                   target="_self"
                   class="text-cyan-400 hover:text-cyan-300 font-medium transition-colors"
                 >

@@ -14,6 +14,7 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params as { lang: Lang };
+const base = import.meta.env.BASE_URL;
 const title = t('nav.soccer', lang);
 
 const items = portfolioData.soccer || [];
@@ -33,7 +34,7 @@ const getSummary = (item: { summary_ja: string; summary_en: string }) =>
   <div class="w-full mx-auto px-6 md:px-8 lg:px-12 xl:px-16 py-12">
     <div class="mb-6">
       <a 
-        href={`/${lang}/#soccer`}
+        href={`${base}${lang}/#soccer`}
         target="_self"
         class="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors font-medium"
       >

@@ -4,9 +4,11 @@ import type { Lang } from '../i18n/utils';
 
 interface Props {
   lang: Lang;
+  base?: string;
 }
 
-const { lang } = Astro.props;
+const { lang, base = '' } = Astro.props;
+const b = base.endsWith('/') ? base : base ? base + '/' : '';
 ---
 
 <footer class="border-t border-gray-800 bg-black/80 backdrop-blur-sm mt-20 relative">
@@ -25,7 +27,7 @@ const { lang } = Astro.props;
         <a href="https://x.com/yukinkmr_soccer" class="text-gray-400 hover:text-cyan-400 transition-colors" target="_blank" rel="noopener noreferrer">
           X
         </a>
-        <a href={`/${lang}/contact/`} target="_self" class="text-gray-400 hover:text-cyan-400 transition-colors">
+        <a href={`${b}${lang}/contact/`} target="_self" class="text-gray-400 hover:text-cyan-400 transition-colors">
           {t('nav.contact', lang)}
         </a>
       </div>

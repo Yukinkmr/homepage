@@ -62,6 +62,7 @@ const featuredItems = categories.map((category) => {
       university={t('home.hero.university', lang)}
       tagline={t('home.hero.tagline', lang)}
       subtitle={t('home.hero.subtitle', lang)}
+      base={base}
     />
 
     <!-- Featured Categories -->
@@ -117,7 +118,7 @@ const featuredItems = categories.map((category) => {
                     date={item.date}
                     tags={item.tags}
                     links={item.links}
-                    image={item.image}
+                    image={item.image ? `${base}${item.image.replace(/^\//, '')}` : undefined}
                   />
                 </div>
               ))}

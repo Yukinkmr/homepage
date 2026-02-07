@@ -5,7 +5,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   output: 'static',
-  site: 'https://yukinakamura.github.io',
-  base: '/',
+  site: 'https://yukinkmr.github.io',
+  base: '/homepage/',
   trailingSlash: 'always',
 });

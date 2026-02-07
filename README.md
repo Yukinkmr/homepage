@@ -1,7 +1,7 @@
 # Personal Portfolio Website
 
 Astro + TypeScript + Tailwind CSS で構築した静的ポートフォリオサイトです。  
-日英のURLベースi18n、ブログ（Content Collections）、経歴・経験・資格のタブ表示、4カテゴリのポートフォリオなどを備えています。
+経歴・経験・資格、ポートフォリオ、ブログなどが含まれており、日英表示が可能としています。
 
 ## 技術スタック
 
@@ -10,10 +10,7 @@ Astro + TypeScript + Tailwind CSS で構築した静的ポートフォリオサ�
 - **Styling**: Tailwind CSS 3.4.17
 - **Blog**: Astro Content Collections + Markdown
 - **Deploy**: GitHub Actions → GitHub Pages
-- **Fonts**:
-  - 日本語: Hiragino Kaku Gothic ProN
-  - 英語: Inter (Google Fonts)
-- **Form**: Formspree（外部サービス）
+- **Form**: Formspree
 
 ## 実装のポイント
 
@@ -25,7 +22,7 @@ Astro + TypeScript + Tailwind CSS で構築した静的ポートフォリオサ�
   - スマホ: 横スクロール＋スナップのカード
   - PC: 3列グリッド
 - **タブUI**: 経歴・経験・資格の切り替え
-- **画像**: 1920×1080（16:9）想定のアスペクト比
+- **画像**: 1920×1080想定のアスペクト比(16:9)
 
 ### 技術
 - **URLベースi18n**: `/ja` と `/en` で言語切り替え

@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background: #000000;
+  }
+  
+  body {
+    @apply text-gray-100 antialiased;
+    background: 
+      radial-gradient(ellipse at top, #2a2a4e 0%, #1a1a3e 40%, #0f0f1e 70%, #000000 100%),
+      radial-gradient(ellipse at bottom, #26314e 0%, #16213e 40%, #0a0a1a 70%, #000000 100%),
+      radial-gradient(ellipse at 50% 30%, #1a2a4e 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 70%, #162a3e 0%, transparent 60%),
+      linear-gradient(180deg, #000000 0%, #0a0a1a 30%, #0f0f2a 50%, #0a0a1a 70%, #000000 100%);
+    background-attachment: fixed;
+    background-size: 100% 100%, 100% 100%, 120% 120%, 120% 120%, 100% 100%;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* 星のような効果 */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.4), transparent),
+      radial-gradient(2px 2px at 60% 70%, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.5), transparent),
+      radial-gradient(1px 1px at 80% 10%, rgba(255, 255, 255, 0.4), transparent),
+      radial-gradient(2px 2px at 90% 40%, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(1px 1px at 33% 60%, rgba(255, 255, 255, 0.4), transparent),
+      radial-gradient(1px 1px at 66% 20%, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(3px 3px at 15% 50%, rgba(255, 255, 255, 0.2), transparent),
+      radial-gradient(2px 2px at 75% 25%, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(1px 1px at 40% 80%, rgba(255, 255, 255, 0.4), transparent);
+    background-size: 200% 200%, 200% 200%, 200% 200%, 200% 200%, 200% 200%, 200% 200%, 200% 200%, 200% 200%, 200% 200%, 200% 200%;
+    background-position: 0% 0%, 100% 100%, 50% 50%, 0% 100%, 100% 0%, 50% 0%, 0% 50%, 30% 70%, 80% 20%, 60% 90%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* 日本語フォント */
+  html[lang="ja"] body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Inter', sans-serif;
+  }
+  
+  /* 英語フォント - shadcn/uiと同じInterフォント */
+  html[lang="en"] body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  /* 日本語サイトでも英語テキストにはInterを使用 */
+  html[lang="ja"] body *:lang(en),
+  html[lang="ja"] body [lang="en"] {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    letter-spacing: -0.02em;
+  }
+  
+  /* MacBook 13インチ（1280px）を基準にしたレスポンシブフォントサイズ */
+  html {
+    font-size: clamp(14px, 1.25vw, 16px);
+  }
+  
+  /* より大きな画面でのスケーリング */
+  @media (min-width: 1920px) {
+    html {
+      font-size: clamp(16px, 1vw, 18px);
+    }
+  }
+  
+  /* 小さな画面でのスケーリング */
+  @media (max-width: 768px) {
+    html {
+      font-size: clamp(14px, 4vw, 16px);
+    }
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+}
+
+.animate-fade-in-up-active {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* 横スクロールバーを非表示にする */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}

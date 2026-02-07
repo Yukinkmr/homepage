@@ -1,0 +1,82 @@
+---
+interface Props {
+  title: string;
+  summary?: string;
+  date?: string;
+  tags?: string[];
+  links?: Array<{ label: string; url: string }>;
+  href?: string;
+  image?: string;
+  class?: string;
+}
+
+const { title, summary, date, tags, links, href, image, class: className } = Astro.props;
+---
+
+<div class={`bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col ${className || ''}`}>
+  {/* 画像セクション - 1920*1080 (16:9) を想定 */}
+  <div class="w-full aspect-video bg-gray-700 flex items-center justify-center overflow-hidden">
+    {image ? (
+      <img 
+        src={image} 
+        alt={title}
+        class="w-full h-full object-cover"
+      />
+    ) : (
+      <div class="text-gray-500 text-sm font-medium">
+        No Image
+      </div>
+    )}
+  </div>
+  
+  <div class="p-6 flex flex-col flex-grow">
+  {href ? (
+    <a href={href} class="block" target="_self">
+      <h3 class="text-3xl md:text-4xl font-bold text-gray-100 mb-3 hover:text-cyan-400 transition-colors tracking-tight">
+        {title}
+      </h3>
+    </a>
+  ) : (
+    <h3 class="text-3xl md:text-4xl font-bold text-gray-100 mb-3 tracking-tight">
+      {title}
+    </h3>
+  )}
+  
+  {summary && (
+    <p class="text-lg md:text-xl text-gray-400 mb-5 leading-relaxed font-light flex-grow">
+      {summary}
+    </p>
+  )}
+  
+  {date && (
+    <p class="text-base md:text-lg text-gray-500 mb-3">
+      {date}
+    </p>
+  )}
+  
+  {tags && tags.length > 0 && (
+    <div class="flex flex-wrap gap-2 mb-4">
+      {tags.map((tag) => (
+        <span class="px-3 py-1.5 text-sm md:text-base bg-gray-700 text-gray-300 rounded">
+          {tag}
+        </span>
+      ))}
+    </div>
+  )}
+  
+  {links && links.length > 0 && (
+    <div class="flex flex-wrap gap-3 mt-auto">
+      {links.map((link) => (
+        <a 
+          href={link.url} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="text-cyan-400 hover:text-cyan-300 text-base md:text-lg font-medium transition-colors"
+        >
+          {link.label} →
+        </a>
+      ))}
+    </div>
+  )}
+  </div>
+</div>

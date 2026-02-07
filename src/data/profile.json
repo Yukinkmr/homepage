@@ -1,0 +1,163 @@
+{
+  "education": [
+    {
+      "id": "edu1",
+      "title_ja": "高校",
+      "title_en": "High School",
+      "org_ja": "東邦大学付属東邦高等学校",
+      "org_en": "Toho University Affiliated Toho High School",
+      "period": "2019.04-2022.03",
+      "bullets_ja": [],
+      "bullets_en": [],
+      "links": []
+    },
+    {
+      "id": "edu2",
+      "title_ja": "大学",
+      "title_en": "Bachelor's Degree",
+      "org_ja": "筑波大学 情報学群 情報科学類",
+      "org_en": "University of Tsukuba, College of Information Science",
+      "period": "2022.04-2026.03(卒業予定)",
+      "bullets_ja": [
+        "専攻：知能情報メディア主専攻",
+        "研究室：コンピュータビジョン研究室",
+        "部活：筑波大学蹴球部"
+      ],
+      "bullets_en": [
+        "Major: Intelligent Information Media",
+        "Laboratory: Computer Vision Laboratory"
+      ],
+      "links": []
+    },
+    {
+      "id": "edu3",
+      "title_ja": "大学院",
+      "title_en": "Graduate School",
+      "org_ja": "筑波大学大学院 システム情報工学研究群 情報理工学位プログラム",
+      "org_en": "University of Tsukuba Graduate School, Master's Program in Information Science and Engineering",
+      "period": "2026.04-(在籍予定)",
+      "bullets_ja": [
+        "研究室：コンピュータビジョン研究室"
+      ],
+      "bullets_en": [
+        "Laboratory: Computer Vision Laboratory"
+      ],
+      "links": []
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp1",
+      "title_ja": "AIエンジニアインターン",
+      "title_en": "AI Engineer Intern",
+      "org_ja": "株式会社Playbox",
+      "org_en": "Playbox Inc.",
+      "period": "2024.08-継続中",
+      "bullets_ja": [
+        "コンピュータビジョン領域のリサーチ・実装",
+        "スポーツ映像における選手・ボールトラッキングシステムの開発"
+      ],
+      "bullets_en": [
+        "Research and implementation in computer vision",
+        "Development of player and ball tracking systems for sports video"
+      ],
+      "links": []
+    },
+    {
+      "id": "exp2",
+      "title_ja": "サッカーアナリスト",
+      "title_en": "Soccer Analyst",
+      "org_ja": "筑波大学蹴球部",
+      "org_en": "University of Tsukuba Football Club",
+      "period": "2022.04-2025.12",
+      "bullets_ja": [
+        "TOPチームに帯同し自チーム・対戦相手の分析を担当",
+        "2025年度全日本大学サッカー選手権大会優勝、2025年度関東大学サッカーリーグ1部優勝、2023年度関東大学サッカーリーグ1部優勝"
+      ],
+      "bullets_en": [
+        "Accompanied the top team and analyzed own team and opponents",
+        "2025 All Japan University Soccer Championship Winner, 2025 Kanto University Soccer League Division 1 Winner, 2023 Kanto University Soccer League Division 1 Winner"
+      ],
+      "links": []
+    },
+    {
+      "id": "exp3",
+      "title_ja": "データアナリストインターン",
+      "title_en": "Data Analyst Intern",
+      "org_ja": "楽天ヴィッセル神戸株式会社",
+      "org_en": "Rakuten Vissel Kobe, Inc.",
+      "period": "2023.02-2025.12",
+      "bullets_ja": [
+        "データと映像を用いた対戦相手分析の一部を担当",
+        "映像編集およびデータの可視化"
+      ],
+      "bullets_en": [
+        "Contributed to opponent analysis using data and video",
+        "Video editing and data visualization"
+      ],
+      "links": []
+    },
+    {
+      "id": "exp4",
+      "title_ja": "サッカー日本代表テクニカルサポート",
+      "title_en": "Technical Support for Japan National Football Team",
+      "org_ja": "日本サッカー協会 (JFA)",
+      "org_en": "Japan Football Association (JFA)",
+      "period": "",
+      "bullets_ja": [
+        "各年代の日本代表の分析資料作成のサポート",
+        "筑波大学チームのリーダーとして分析業務のマネジメント",
+        "A代表：2026北中米ワールドカップ、2024アジア最終予選、2023アジアカップ",
+        "U-23：2024パリオリンピック・アジアカップ",
+        "U-14：2023ナショナルトレセン テクニカルスタッフ"
+      ],
+      "bullets_en": [
+        "Support for creating analysis materials for Japan national teams of all age groups",
+        "Managed analysis operations as leader of University of Tsukuba team",
+        "Senior Team: 2026 CONCACAF World Cup, 2024 AFC Final Qualifying Round, 2023 AFC Asian Cup",
+        "U-23: 2024 Paris Olympics, AFC U-23 Asian Cup",
+        "U-14: 2023 National Training Center Technical Staff"
+      ],
+      "links": []
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert1",
+      "title_ja": "TOEIC L&R",
+      "title_en": "TOEIC Listening & Reading Test",
+      "org_ja": "ETS (Educational Testing Service)",
+      "org_en": "ETS (Educational Testing Service)",
+      "period": "2025.04",
+      "bullets_ja": [
+        "スコア：880"
+      ],
+      "bullets_en": [
+        "Score: 880"
+      ],
+      "links": []
+    },
+    {
+      "id": "cert2",
+      "title_ja": "基本情報技術者試験",
+      "title_en": "Fundamental Information Technology Engineer Examination (FE)",
+      "org_ja": "独立行政法人情報処理推進機構 (IPA)",
+      "org_en": "Information-technology Promotion Agency, Japan (IPA)",
+      "period": "2024.02",
+      "bullets_ja": [],
+      "bullets_en": [],
+      "links": []
+    },
+    {
+      "id": "cert3",
+      "title_ja": "LinuC Level 2 Exam 201",
+      "title_en": "LinuC Level 2 Exam 201",
+      "org_ja": "LPI-Japan (Linux Professional Institute Japan)",
+      "org_en": "LPI-Japan (Linux Professional Institute Japan)",
+      "period": "2022.12",
+      "bullets_ja": [],
+      "bullets_en": [],
+      "links": []
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "soccer": [
+    {
+      "id": "soccer1",
+      "category": "soccer",
+      "title_ja": "サッカー分析プロジェクト",
+      "title_en": "Soccer Analysis Project",
+      "summary_ja": "機械学習を用いたサッカーの戦術分析",
+      "summary_en": "Tactical analysis of soccer using machine learning",
+      "date": "2024-01",
+      "tags": ["機械学習", "データ分析"],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/example"
+        }
+      ],
+      "featured": true,
+      "order": 1,
+      "type": "analysis",
+      "image": "/images/soccer1.jpg"
+    },
+    {
+      "id": "soccer2",
+      "category": "soccer",
+      "title_ja": "試合データ可視化",
+      "title_en": "Match Data Visualization",
+      "summary_ja": "サッカーの試合データを可視化するツール",
+      "summary_en": "Tool for visualizing soccer match data",
+      "date": "2023-12",
+      "tags": ["可視化", "データ分析"],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/example"
+        }
+      ],
+      "featured": true,
+      "order": 2,
+      "type": "project"
+    },
+    {
+      "id": "soccer3",
+      "category": "soccer",
+      "title_ja": "戦術レポート",
+      "title_en": "Tactical Report",
+      "summary_ja": "チームの戦術を分析したレポート",
+      "summary_en": "Report analyzing team tactics",
+      "date": "2023-11",
+      "tags": ["分析", "レポート"],
+      "links": [],
+      "featured": true,
+      "order": 3,
+      "type": "report"
+    }
+  ],
+  "research": [
+    {
+      "id": "research1",
+      "category": "research",
+      "title_ja": "深層学習の研究",
+      "title_en": "Deep Learning Research",
+      "summary_ja": "ニューラルネットワークの最適化に関する研究",
+      "summary_en": "Research on neural network optimization",
+      "date": "2024-02",
+      "tags": ["深層学習", "研究"],
+      "links": [
+        {
+          "label": "論文",
+          "url": "https://example.com/paper"
+        }
+      ],
+      "featured": true,
+      "order": 1,
+      "type": "paper",
+      "image": "/images/research1.jpg"
+    },
+    {
+      "id": "research2",
+      "category": "research",
+      "title_ja": "コンピュータビジョン研究",
+      "title_en": "Computer Vision Research",
+      "summary_ja": "画像認識の精度向上に関する研究",
+      "summary_en": "Research on improving image recognition accuracy",
+      "date": "2024-01",
+      "tags": ["コンピュータビジョン", "研究"],
+      "links": [
+        {
+          "label": "論文",
+          "url": "https://example.com/paper"
+        }
+      ],
+      "featured": true,
+      "order": 2,
+      "type": "paper"
+    },
+    {
+      "id": "research3",
+      "category": "research",
+      "title_ja": "データマイニング研究",
+      "title_en": "Data Mining Research",
+      "summary_ja": "大規模データからのパターン抽出",
+      "summary_en": "Pattern extraction from large-scale data",
+      "date": "2023-12",
+      "tags": ["データマイニング", "研究"],
+      "links": [],
+      "featured": true,
+      "order": 3,
+      "type": "paper"
+    }
+  ],
+  "development": [
+    {
+      "id": "dev1",
+      "category": "development",
+      "title_ja": "Webアプリケーション開発",
+      "title_en": "Web Application Development",
+      "summary_ja": "ReactとTypeScriptを使ったモダンなWebアプリ",
+      "summary_en": "Modern web app using React and TypeScript",
+      "date": "2024-03",
+      "tags": ["React", "TypeScript", "Web"],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/example"
+        },
+        {
+          "label": "デモ",
+          "url": "https://example.com/demo"
+        }
+      ],
+      "featured": true,
+      "order": 1,
+      "type": "project",
+      "image": "/images/dev1.jpg"
+    },
+    {
+      "id": "dev2",
+      "category": "development",
+      "title_ja": "モバイルアプリ開発",
+      "title_en": "Mobile App Development",
+      "summary_ja": "React Nativeを使ったクロスプラットフォームアプリ",
+      "summary_en": "Cross-platform app using React Native",
+      "date": "2024-02",
+      "tags": ["React Native", "モバイル"],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/example"
+        }
+      ],
+      "featured": true,
+      "order": 2,
+      "type": "project"
+    },
+    {
+      "id": "dev3",
+      "category": "development",
+      "title_ja": "API開発",
+      "title_en": "API Development",
+      "summary_ja": "RESTful APIの設計と実装",
+      "summary_en": "Design and implementation of RESTful API",
+      "date": "2024-01",
+      "tags": ["API", "バックエンド"],
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/example"
+        }
+      ],
+      "featured": true,
+      "order": 3,
+      "type": "project"
+    }
+  ],
+  "other": [
+    {
+      "id": "other1",
+      "category": "other",
+      "title_ja": "留学経験",
+      "title_en": "Study Abroad Experience",
+      "summary_ja": "アメリカの大学での1年間の留学",
+      "summary_en": "One-year study abroad at a US university",
+      "date": "2023",
+      "tags": ["留学", "国際"],
+      "links": [],
+      "featured": true,
+      "order": 1,
+      "type": "experience",
+      "image": "/images/other1.jpg"
+    },
+    {
+      "id": "other2",
+      "category": "other",
+      "title_ja": "ボランティア活動",
+      "title_en": "Volunteer Work",
+      "summary_ja": "地域コミュニティでのボランティア活動",
+      "summary_en": "Volunteer work in local community",
+      "date": "2023",
+      "tags": ["ボランティア", "コミュニティ"],
+      "links": [],
+      "featured": true,
+      "order": 2,
+      "type": "experience"
+    },
+    {
+      "id": "other3",
+      "category": "other",
+      "title_ja": "カンファレンス参加",
+      "title_en": "Conference Attendance",
+      "summary_ja": "技術カンファレンスでの発表",
+      "summary_en": "Presentation at technical conference",
+      "date": "2023",
+      "tags": ["カンファレンス", "発表"],
+      "links": [],
+      "featured": true,
+      "order": 3,
+      "type": "talk"
+    }
+  ]
+}

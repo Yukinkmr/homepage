@@ -1,0 +1,255 @@
+---
+import { t } from '../i18n/utils';
+import type { Lang } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  profile: {
+    education: Array<{
+      id: string;
+      title_ja: string;
+      title_en: string;
+      org_ja: string;
+      org_en: string;
+      period: string;
+      bullets_ja: string[];
+      bullets_en: string[];
+      links: Array<{ label: string; url: string }>;
+    }>;
+    experience: Array<{
+      id: string;
+      title_ja: string;
+      title_en: string;
+      org_ja: string;
+      org_en: string;
+      period: string;
+      bullets_ja: string[];
+      bullets_en: string[];
+      links: Array<{ label: string; url: string }>;
+    }>;
+    certifications: Array<{
+      id: string;
+      title_ja: string;
+      title_en: string;
+      org_ja: string;
+      org_en: string;
+      period: string;
+      bullets_ja: string[];
+      bullets_en: string[];
+      links: Array<{ label: string; url: string }>;
+    }>;
+  };
+  name: string;
+  nameEn: string;
+  nameJa: string;
+  university: string;
+  tagline: string;
+  subtitle: string;
+}
+
+const { lang, profile, name, nameEn, nameJa, university, tagline, subtitle } = Astro.props;
+
+const getTitle = (item: { title_ja: string; title_en: string }) => 
+  lang === 'ja' ? item.title_ja : item.title_en;
+const getOrg = (item: { org_ja: string; org_en: string }) => 
+  lang === 'ja' ? item.org_ja : item.org_en;
+const getBullets = (item: { bullets_ja: string[]; bullets_en: string[] }) => 
+  lang === 'ja' ? item.bullets_ja : item.bullets_en;
+
+// モバイル時に半角スペースで改行する関数
+const formatOrgForMobile = (org: string) => {
+  // 半角スペースを <span class="md:hidden"><br></span><span class="hidden md:inline"> </span> に置き換え
+  return org.split(' ').map((part, index, array) => {
+    if (index === array.length - 1) {
+      return part;
+    }
+    return `${part}<span class="md:hidden"><br></span><span class="hidden md:inline"> </span>`;
+  }).join('');
+};
+---
+
+<div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-10 md:p-14 lg:p-20 mb-16 hover:border-cyan-500/50 transition-colors animate-fade-in-up" data-animate>
+  <!-- Self Introduction -->
+  <div class="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8 pb-8 border-b border-gray-700">
+    <img 
+      src="/icon.jpg" 
+      alt={name}
+      class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-cyan-400/50 flex-shrink-0"
+    />
+    <div class="text-center md:text-left flex-grow">
+      <div class="mb-4">
+        <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-100 tracking-tight">
+          {name}
+        </h2>
+        <p class="text-2xl md:text-3xl lg:text-4xl text-gray-500 mt-1">
+          {lang === 'ja' ? nameEn : nameJa}
+        </p>
+      </div>
+      <div class="text-xl md:text-2xl text-gray-400 font-light space-y-1">
+        <div>{lang === 'ja' ? '2003年9月15日生まれ' : 'Born September 15, 2003'}</div>
+        <div>{university}</div>
+        <div>{tagline}</div>
+        <div>{subtitle}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="flex border-b border-gray-700 mb-6">
+    <button
+      class="tab-button flex-1 px-6 py-3 text-lg md:text-xl font-semibold text-gray-400 hover:text-cyan-400 border-b-2 border-transparent hover:border-cyan-500 transition-colors text-center"
+      data-tab="education"
+    >
+      {t('home.sections.education', lang)}
+    </button>
+    <button
+      class="tab-button flex-1 px-6 py-3 text-lg md:text-xl font-semibold text-gray-400 hover:text-cyan-400 border-b-2 border-transparent hover:border-cyan-500 transition-colors text-center"
+      data-tab="experience"
+    >
+      {t('home.sections.experience', lang)}
+    </button>
+    <button
+      class="tab-button flex-1 px-6 py-3 text-lg md:text-xl font-semibold text-gray-400 hover:text-cyan-400 border-b-2 border-transparent hover:border-cyan-500 transition-colors text-center"
+      data-tab="certifications"
+    >
+      {t('home.sections.certifications', lang)}
+    </button>
+  </div>
+
+  <!-- Education Tab Content -->
+  <div id="tab-education" class="tab-content">
+    <div class="space-y-8 md:space-y-10 lg:space-y-12">
+      {[...profile.education].reverse().map((item) => (
+        <div>
+          <h4 class="text-lg md:text-xl lg:text-2xl font-medium text-gray-500 mb-2">
+            {getTitle(item)}
+          </h4>
+          <p class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-100 mb-2" set:html={formatOrgForMobile(getOrg(item))}></p>
+          {item.period && (
+            <p class="text-base md:text-lg text-gray-500 mb-2">
+              {item.period}
+            </p>
+          )}
+          {getBullets(item).length > 0 && (
+            <ul class="list-disc list-inside text-lg md:text-xl lg:text-2xl text-gray-400 space-y-1 ml-2">
+              {getBullets(item).map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Experience Tab Content -->
+  <div id="tab-experience" class="tab-content hidden">
+    <div class="space-y-8 md:space-y-10 lg:space-y-12">
+      {profile.experience.map((item) => (
+        <div>
+          <h4 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-100 mb-1">
+            {getTitle(item)}
+          </h4>
+          <p class="text-xl md:text-2xl lg:text-3xl font-medium text-gray-300 mb-1">
+            {getOrg(item)}
+          </p>
+          {item.period && (
+            <p class="text-base md:text-lg text-gray-500 mb-2">
+              {item.period}
+            </p>
+          )}
+          {getBullets(item).length > 0 && (
+            <ul class="list-disc list-inside text-lg md:text-xl lg:text-2xl text-gray-400 space-y-1 ml-2">
+              {getBullets(item).map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Certifications Tab Content -->
+  <div id="tab-certifications" class="tab-content hidden">
+    <div class="space-y-8 md:space-y-10 lg:space-y-12">
+      {profile.certifications.map((item) => {
+        const bullets = getBullets(item);
+        const hasScore = bullets.length > 0 && (bullets[0].includes('スコア') || bullets[0].includes('Score'));
+        const scoreText = hasScore ? bullets[0] : null;
+        const displayTitle = scoreText ? `${getTitle(item)} ${scoreText}` : getTitle(item);
+        
+        return (
+          <div>
+                  <h4 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-100 mb-1">
+                    {displayTitle}
+                  </h4>
+                  {lang === 'en' && (
+                    <p class="text-xl md:text-2xl lg:text-3xl font-medium text-gray-300 mb-1">
+                      {getOrg(item)}
+                    </p>
+                  )}
+                  {bullets.length > 0 && !hasScore && (
+                    <ul class="list-disc list-inside text-lg md:text-xl lg:text-2xl text-gray-400 space-y-1 ml-2 mb-1">
+                      {bullets.map((bullet) => (
+                        <li>{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
+                  <p class="text-base md:text-lg text-gray-500">
+                    {item.period}
+                  </p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</div>
+
+<script>
+  if (typeof document !== 'undefined') {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    // 最初のタブをアクティブにする
+    if (tabButtons.length > 0 && tabContents.length > 0) {
+      tabButtons[0].classList.add('active');
+      tabContents[0].classList.remove('hidden');
+      
+      tabButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab');
+          
+          // すべてのタブボタンとコンテンツをリセット
+          tabButtons.forEach((btn) => {
+            btn.classList.remove('active', 'text-cyan-400', 'border-cyan-500');
+            btn.classList.add('text-gray-400', 'border-transparent');
+          });
+          
+          tabContents.forEach((content) => {
+            content.classList.add('hidden');
+          });
+          
+          // アクティブなタブを設定
+          button.classList.add('active', 'text-cyan-400', 'border-cyan-500');
+          button.classList.remove('text-gray-400', 'border-transparent');
+          
+          const targetContent = document.getElementById(`tab-${targetTab}`);
+          if (targetContent) {
+            targetContent.classList.remove('hidden');
+          }
+        });
+      });
+    }
+  }
+</script>
+
+<style>
+  .tab-button.active {
+    @apply text-cyan-400 border-cyan-500;
+  }
+  
+  .tab-content {
+    animation: fade-in 0.3s ease-out;
+  }
+</style>

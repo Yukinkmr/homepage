@@ -67,22 +67,15 @@
     letter-spacing: -0.02em;
   }
   
-  /* MacBook 13インチ（1280px）を基準にしたレスポンシブフォントサイズ */
+  /* 固定ベースフォントサイズ（ローカル・本番で表示を統一） */
   html {
-    font-size: clamp(14px, 1.25vw, 16px);
+    font-size: 16px;
   }
   
-  /* より大きな画面でのスケーリング */
-  @media (min-width: 1920px) {
+  /* 小さな画面のみやや縮小 */
+  @media (max-width: 640px) {
     html {
-      font-size: clamp(16px, 1vw, 18px);
-    }
-  }
-  
-  /* 小さな画面でのスケーリング */
-  @media (max-width: 768px) {
-    html {
-      font-size: clamp(14px, 4vw, 16px);
+      font-size: 15px;
     }
   }
 }

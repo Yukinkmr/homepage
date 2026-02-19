@@ -58,6 +58,7 @@ const getSummary = (item: { summary_ja: string; summary_en: string }) =>
               date={item.date}
               tags={item.tags}
               links={item.links}
+              image={item.image ? `${base}${item.image.replace(/^\//, '').split('/').map(encodeURIComponent).join('/')}` : undefined}
             />
           ))}
         </div>
